@@ -1,5 +1,5 @@
 import React from 'react'
-import './Profile.css'
+import './profile.css'
 import './KeywordPositions.css'
 import TypedText from '../TypedText/TypedText'
 import SpaceAnimation from './SpaceAnimation'
