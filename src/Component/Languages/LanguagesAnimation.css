@@ -1,0 +1,89 @@
+/* Static styles for skill cards - no animations */
+.skill-card {
+  opacity: 1;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Remove glow effects and text shadows */
+.skill-card i.devicon-html5-plain.colored {
+  color: #E44D26;
+}
+
+.skill-card i.devicon-css3-plain.colored {
+  color: #264DE4;
+}
+
+.skill-card i.devicon-javascript-plain.colored {
+  color: #F7DF1E;
+}
+
+.skill-card i.devicon-react-original.colored {
+  color: #61DAFB;
+}
+
+.skill-card i.devicon-nodejs-plain.colored {
+  color: #8CC84B;
+}
+
+.skill-card i.devicon-mongodb-plain.colored {
+  color: #4DB33D;
+}
+
+.skill-card i.devicon-java-plain.colored {
+  color: #F89820;
+}
+
+.skill-card i.devicon-python-plain.colored {
+  color: #3776AB;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .languages-section {
+    min-height: initial;
+    max-height: 49vh;
+    padding: 30px 15px;
+  }
+  
+  .languages-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 15px;
+  }
+  
+  .skill-card {
+    padding: 12px 6px;
+  }
+  
+  .skill-card i {
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+  
+  .skill-card span {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .languages-grid {
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    gap: 10px;
+  }
+  
+  .skill-card {
+    padding: 10px 5px;
+  }
+  
+  .skill-card i {
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+  }
+  
+  .skill-card span {
+    font-size: 0.7rem;
+  }
+}
