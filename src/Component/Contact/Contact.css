@@ -243,7 +243,7 @@
 }
 
 .contact-info-header h2 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 600;
     margin: 0 0 8px 0;
     color: #fff;
@@ -272,7 +272,9 @@
     align-content: start;
     justify-content: center;
     max-height: calc(100% - 80px);
+    padding-top: 10px;
     overflow: hidden;
+    
 }
 
 .contact-item {
