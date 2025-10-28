@@ -315,6 +315,108 @@
     transform: translateY(-5px) scale(1.02);
 }
 
+/* Ultra-wide screens (1920px+) - Large monitors */
+@media (min-width: 1920px) {
+    .profile {
+        padding: 100px 80px;
+    }
+    
+    .profile-stage {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    
+    .profile-content {
+        padding-left: 80px;
+        padding-right: 100px;
+    }
+    
+    .profile-content h1 {
+        font-size: 3.2rem;
+    }
+    
+    .profile-content h2 {
+        font-size: 2rem;
+    }
+    
+    .profile-content h3 {
+        font-size: 1.4rem;
+    }
+    
+    .profile-content p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+}
+
+/* Large laptops (1680px-1920px) - MacBook Pro 16", Dell XPS 17" */
+@media (min-width: 1680px) and (max-width: 1919px) {
+    .profile {
+        padding: 90px 70px;
+    }
+    
+    .profile-stage {
+        margin-left: 90px;
+        margin-right: 90px;
+    }
+    
+    .profile-content {
+        padding-left: 70px;
+        padding-right: 90px;
+    }
+    
+    .profile-content h1 {
+        font-size: 3rem;
+    }
+    
+    .profile-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .profile-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .profile-content p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+}
+
+/* Medium-large laptops (1440px-1680px) - MacBook Pro 14", Dell XPS 15" */
+@media (min-width: 1440px) and (max-width: 1679px) {
+    .profile {
+        padding: 85px 60px;
+    }
+    
+    .profile-stage {
+        margin-left: 85px;
+        margin-right: 85px;
+    }
+    
+    .profile-content {
+        padding-left: 65px;
+        padding-right: 85px;
+    }
+    
+    .profile-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .profile-content h2 {
+        font-size: 1.7rem;
+    }
+    
+    .profile-content h3 {
+        font-size: 1.25rem;
+    }
+    
+    .profile-content p {
+        font-size: 1.05rem;
+        line-height: 1.65;
+    }
+}
+
 /* Enhanced responsive behavior for profile pictures with head visibility */
 @media (max-width: 1400px) {
     .profile-picture {

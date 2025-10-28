@@ -14,16 +14,71 @@
     padding: 20px;
     background: linear-gradient(45deg, #1c22377f);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.148);
+    
+    /* Enhanced flexbox for perfect alignment */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
     flex-direction: row;
+    
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
     justify-content: space-between;
-    gap: 50px;
-    align-items: center;
+    
+    gap: 40px;
+    
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    
     min-height: 100vh;
+    
+    /* Ensure consistent box model */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
+    
+    /* Production-specific alignment fixes */
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    
+    /* Force consistent rendering */
+    will-change: auto;
+    transform: translateZ(0);
+    
     /* Initial state - hidden until scroll triggers */
     opacity: 0;
     transform: translateY(60px) scale(0.95);
+}
+
+/* Perfect 60/40 split for desktop */
+.about-me .about {
+    flex: 0 0 60%;
+    max-width: 60%;
+    width: 60%;
+    min-height: 90vh;
+    align-self: stretch;
+}
+
+.about-me .chatbot-shell {
+    flex: 0 0 40%;
+    max-width: 40%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: 0;
+    align-self: stretch;
 }
 
 /* Enhanced appear when scrolled into view */
@@ -34,11 +89,65 @@
     animation: enhancedAppear 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
+/* Ultra-wide screens (1920px+) - Large monitors */
+@media screen and (min-width: 1920px) {
+    .about-me {
+        padding: 40px 80px;
+        gap: 80px;
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+}
+
+/* Large laptops (1680px-1920px) - MacBook Pro 16", Dell XPS 17" */
+@media screen and (min-width: 1680px) and (max-width: 1919px) {
+    .about-me {
+        padding: 30px 60px;
+        gap: 70px;
+    }
+}
+
+/* Medium-large laptops (1440px-1680px) - MacBook Pro 14", Dell XPS 15" */
+@media screen and (min-width: 1440px) and (max-width: 1679px) {
+    .about-me {
+        padding: 25px 50px;
+        gap: 60px;
+    }
+}
+
+/* Standard laptops (1200px-1440px) - Most Dell laptops, some MacBooks */
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+    .about-me {
+        padding: 20px 40px;
+        gap: 50px;
+    }
+}
+
+/* Small laptops (1024px-1200px) - MacBook Air, smaller Dell laptops */
+@media screen and (min-width: 1025px) and (max-width: 1199px) {
+    .about-me {
+        gap: 40px;
+        padding: 20px 30px;
+    }
+}
+
 /* Tablet responsive */
 @media screen and (max-width: 1024px) {
     .about-me {
         gap: 30px;
         padding: 15px;
+    }
+    
+    .about-me .about {
+        flex: 0 0 55%;
+        max-width: 55%;
+        width: 55%;
+    }
+    
+    .about-me .chatbot-shell {
+        flex: 0 0 45%;
+        max-width: 45%;
+        width: 45%;
     }
 }
 
@@ -53,6 +162,22 @@
         height: auto;
         overflow: visible;
         background: linear-gradient(45deg, #1c22377f);
+    }
+    
+    .about-me .about {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+        min-height: 80vh;
+        height: auto;
+    }
+    
+    .about-me .chatbot-shell {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        min-height: 400px;
     }
 }
 /* Small mobile */

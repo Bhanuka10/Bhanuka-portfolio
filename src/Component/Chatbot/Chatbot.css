@@ -1,12 +1,22 @@
 .chatbot-shell {
   position: relative;
-  right: 30px;
+  right: 0;
   z-index: 900; /* Lower than navigation z-index which is 1000 */
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
+  width: 100%;
+  
+  /* Ensure proper flex behavior in AboutMe container */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  /* Consistent rendering */
+  will-change: auto;
+  transform: translateZ(0);
 }
 
 /* Floating chat toggle button for mobile */
@@ -240,6 +250,71 @@
 }
 
 .send-btn:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(30,136,229,0.14); }
+
+/* Ultra-wide screens (1920px+) - Large monitors */
+@media (min-width: 1920px) {
+  .chatbot-shell {
+    position: relative;
+    right: 20px;
+  }
+  
+  .chatbot-card {
+    width: 400px;
+    height: 500px;
+  }
+}
+
+/* Large laptops (1680px-1920px) - MacBook Pro 16", Dell XPS 17" */
+@media (min-width: 1680px) and (max-width: 1919px) {
+  .chatbot-shell {
+    position: relative;
+    right: 25px;
+  }
+  
+  .chatbot-card {
+    width: 380px;
+    height: 480px;
+  }
+}
+
+/* Medium-large laptops (1440px-1680px) - MacBook Pro 14", Dell XPS 15" */
+@media (min-width: 1440px) and (max-width: 1679px) {
+  .chatbot-shell {
+    position: relative;
+    right: 25px;
+  }
+  
+  .chatbot-card {
+    width: 370px;
+    height: 470px;
+  }
+}
+
+/* Standard laptops (1200px-1440px) - Most Dell laptops, some MacBooks */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .chatbot-shell {
+    position: relative;
+    right: 30px;
+  }
+  
+  .chatbot-card {
+    width: 360px;
+    height: 450px;
+  }
+}
+
+/* Small laptops (1024px-1200px) - MacBook Air, smaller Dell laptops */
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .chatbot-shell {
+    position: relative;
+    right: 20px;
+  }
+  
+  .chatbot-card {
+    width: 350px;
+    height: 440px;
+  }
+}
 
 /* Desktop - default behavior */
 .chatbot-shell {

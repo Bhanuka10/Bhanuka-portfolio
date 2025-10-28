@@ -1,0 +1,149 @@
+/* Critical CSS Reset for Network Consistency */
+/* This file ensures consistent rendering across local and network access */
+
+* {
+    box-sizing: border-box !important;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100% !important;
+    height: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* Force consistent viewport */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    background: #0a0a0a !important;
+    color: #ffffff !important;
+}
+
+/* Root container consistency */
+#root {
+    width: 100% !important;
+    min-height: 100vh !important;
+    position: relative !important;
+    overflow-x: hidden !important;
+}
+
+/* Force consistent flexbox behavior */
+.about-me {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+}
+
+.about-me .about {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+}
+
+.about-me .chatbot-shell {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Force About boxes alignment */
+.about .about-boxes {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.about .about-box {
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+/* Profile section consistency */
+.profile {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.profile-stage {
+    flex: 0 0 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+}
+
+.profile-content {
+    flex: 0 0 50% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+}
+
+/* Mobile responsive consistency */
+@media (max-width: 768px) {
+    .about-me {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    
+    .about .about-boxes {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .about .about-box {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin: 0 auto !important;
+    }
+    
+    .profile {
+        flex-direction: column !important;
+    }
+    
+    .profile-stage,
+    .profile-content {
+        flex: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Force hardware acceleration for consistency */
+.about-me,
+.profile,
+.about-boxes,
+.about-box {
+    transform: translateZ(0) !important;
+    will-change: auto !important;
+}
+
+/* Prevent layout shifts */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
+/* Cache busting for development */
+.about-me::before {
+    content: "";
+    display: none;
+    /* This forces CSS recalculation */
+}

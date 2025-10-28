@@ -21,10 +21,28 @@ export default defineConfig({
   },
   server: {
     port: 5173,
-    host: true
+    host: '0.0.0.0', // Allow access from network
+    strictPort: false,
+    open: false,
+    cors: true,
+    // Force CSS refresh
+    hmr: {
+      overlay: true
+    }
   },
   preview: {
     port: 4173,
-    host: true
+    host: '0.0.0.0', // Allow access from network
+    strictPort: false,
+    open: false,
+    cors: true
+  },
+  css: {
+    devSourcemap: true,
+    // Force CSS processing consistency
+    preprocessorOptions: {},
+    postcss: {},
+    // Ensure consistent CSS loading
+    modules: false
   }
 })
