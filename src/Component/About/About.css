@@ -3,7 +3,7 @@
 .about {
   width: 100%;
   max-height: 100vh;
-  height: 90vh;
+  
   padding: 20px 20px;
   background: linear-gradient(135deg, #0f172a, #1e293b); /* dark gradient */
   color: #fff;
@@ -399,6 +399,31 @@
     /* Reset flex properties for mobile */
     flex: none;
     min-height: 200px;
+    
+    /* Perfect content alignment for mobile */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    
+    /* Ensure proper text flow */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .about-box h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+  
+  .about-box p {
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 1rem;
+    width: 100%;
   }
 }
 
@@ -436,6 +461,31 @@
     padding: 20px 15px;
     margin: 0 auto 5px;
     box-sizing: border-box;
+    
+    /* Perfect content alignment for 768px mobile */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    
+    /* Ensure proper text flow */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .about-box h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+  }
+  
+  .about-box p {
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    width: 100%;
   }
 }
 
@@ -461,12 +511,32 @@
     max-width: 88%;
     padding: 18px 12px;
     box-sizing: border-box;
-    margin-bottom: 5px;
+    margin: 0 auto 5px;
+    
+    /* Perfect content alignment for 600px mobile */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    
+    /* Ensure proper text flow */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   
   .about-box h2 {
+    text-align: center;
+    width: 100%;
     font-size: 1.4rem;
     margin-bottom: 12px;
+  }
+  
+  .about-box p {
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    width: 100%;
   }
 }
 
@@ -495,16 +565,31 @@
     padding: 15px 10px;
     border-radius: 12px;
     box-sizing: border-box;
-    margin-bottom: 3px;
+    margin: 0 auto 3px;
+    
+    /* Perfect content alignment for 480px mobile */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    
+    /* Ensure proper text flow */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   
   .about-box h2 {
+    text-align: center;
+    width: 100%;
     font-size: 1.3rem;
     margin-bottom: 10px;
   }
   
   .about-box p {
+    text-align: justify;
     font-size: 0.9rem;
     line-height: 1.5;
+    width: 100%;
   }
 }

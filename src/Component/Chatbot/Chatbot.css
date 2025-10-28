@@ -38,6 +38,12 @@
   justify-content: center;
   font-size: 24px;
   color: white;
+  
+  /* Add smooth scroll following behavior for mobile */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .chat-toggle-btn:hover {
@@ -355,6 +361,17 @@
   
   .chat-toggle-btn {
     display: flex;
+    /* Position absolute to move with scroll rather than stay fixed */
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    
+    /* Position relative to the entire document */
+    position: absolute;
+    right: 20px;
+    /* Position it near the bottom of the visible content */
+    bottom: 100px;
   }
   
   .chatbot-card {
@@ -387,7 +404,10 @@
     height: 55px;
     font-size: 22px;
     right: 15px;
-    bottom: 15px;
+    bottom: 80px;
+    /* Ensure absolute positioning for scroll movement */
+    position: absolute;
+    z-index: 999;
   }
   
   .chatbot-card {

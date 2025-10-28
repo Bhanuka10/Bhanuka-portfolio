@@ -637,7 +637,8 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 700;
+    font-size: 30px;
+    font-weight: 600;
     position: relative;
 }
 
