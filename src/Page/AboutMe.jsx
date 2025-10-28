@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import About from '../Component/About/About'
 import Chatbot from '../Component/Chatbot/Chatbot'
 import './AboutMe.css'
+import './AboutMe-production.css'
 
 const AboutMe = () => {
   const aboutMeRef = useRef(null);
