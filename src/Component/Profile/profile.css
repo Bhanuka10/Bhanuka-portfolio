@@ -263,6 +263,7 @@
     z-index: 2;
     /* Professional scale-in animation */
     animation: scaleInProfile 1.2s ease-out 0.8s both;
+    
 }
 
 .profile-pic-container:hover {
@@ -329,6 +330,7 @@
     .profile-content {
         padding-left: 80px;
         padding-right: 100px;
+        
     }
     
     .profile-content h1 {

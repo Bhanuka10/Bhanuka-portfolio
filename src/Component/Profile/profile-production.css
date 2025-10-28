@@ -120,3 +120,326 @@
         animation-fill-mode: both !important;
     }
 }
+
+/* COMPREHENSIVE RESPONSIVE OVERRIDES FOR PRODUCTION */
+/* These overrides ensure the text is properly responsive across all devices */
+
+/* Mobile and Tablet Layout Overrides */
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column !important;
+        padding: 60px 20px 40px 20px !important;
+        text-align: center !important;
+        min-height: 100vh !important;
+    }
+    
+    .profile-stage {
+        flex: none !important;
+        flex-basis: auto !important;
+        margin: 0 0 30px 0 !important;
+        max-width: 100% !important;
+        min-height: 400px !important;
+    }
+    
+    .profile-content {
+        flex: none !important;
+        flex-basis: auto !important;
+        padding: 0 20px !important;
+        max-width: 100% !important;
+        text-align: center !important;
+    }
+    
+    /* Mobile Text Responsiveness */
+    .profile-content h1 {
+        font-size: 2.4rem !important;
+        margin-bottom: 15px !important;
+        line-height: 1.2 !important;
+    }
+    
+    .profile-content h2 {
+        font-size: 1.9rem !important;
+        margin-bottom: 15px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .profile-content h3 {
+        font-size: 1.6rem !important;
+        margin-bottom: 20px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .profile-content p {
+        font-size: 1.05rem !important;
+        line-height: 1.7 !important;
+        margin-bottom: 30px !important;
+        max-width: 100% !important;
+    }
+    
+    .location-info {
+        top: 25px !important;
+        left: 15px !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .profile {
+        padding: 50px 15px 35px 15px !important;
+    }
+    
+    .profile-stage {
+        margin-bottom: 25px !important;
+        min-height: 320px !important;
+    }
+    
+    /* Smaller Mobile Text */
+    .profile-content h1 {
+        font-size: 2.0rem !important;
+        margin-bottom: 12px !important;
+        line-height: 1.2 !important;
+    }
+    
+    .profile-content h2 {
+        font-size: 1.6rem !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .profile-content h3 {
+        font-size: 1.4rem !important;
+        margin-bottom: 18px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .profile-content p {
+        font-size: 1rem !important;
+        margin-bottom: 25px !important;
+        padding: 0 10px !important;
+        line-height: 1.6 !important;
+        max-width: 100% !important;
+    }
+    
+    .location-info {
+        top: 80px !important;
+        left: 12px !important;
+    }
+}
+
+@media (max-width: 560px) {
+    /* Medium Mobile Text */
+    .profile-content h1 {
+        font-size: 1.9rem !important;
+        margin-bottom: 12px !important;
+        line-height: 1.2 !important;
+    }
+    
+    .profile-content h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .profile-content h3 {
+        font-size: 1.3rem !important;
+        margin-bottom: 16px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .profile-content p {
+        font-size: 0.98rem !important;
+        margin-bottom: 22px !important;
+        padding: 0 8px !important;
+        line-height: 1.6 !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile {
+        padding: 30px 12px !important;
+    }
+    
+    .profile-stage {
+        margin-bottom: 20px !important;
+        min-height: 280px !important;
+    }
+    
+    .profile-content {
+        padding: 0 10px !important;
+    }
+    
+    /* Small Mobile Text */
+    .profile-content h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 10px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .profile-content h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 10px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .profile-content h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 15px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .profile-content p {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 20px !important;
+        padding: 0 5px !important;
+        max-width: 100% !important;
+    }
+    
+    .location-info {
+        top: 40px !important;
+        left: 10px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .profile {
+        padding: 25px 10px !important;
+    }
+    
+    .profile-stage {
+        min-height: 250px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    /* Extra Small Mobile Text */
+    .profile-content h1 {
+        font-size: 1.6rem !important;
+        margin-bottom: 8px !important;
+        line-height: 1.2 !important;
+    }
+    
+    .profile-content h2 {
+        font-size: 1.25rem !important;
+        margin-bottom: 8px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .profile-content h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 12px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .profile-content p {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 18px !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .profile {
+        padding: 20px 8px !important;
+    }
+    
+    .profile-stage {
+        min-height: 220px !important;
+    }
+    
+    /* Tiny Mobile Text */
+    .profile-content h1 {
+        font-size: 1.4rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .profile-content h2 {
+        font-size: 1.1rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .profile-content h3 {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    .profile-content p {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 15px !important;
+        max-width: 100% !important;
+    }
+    
+    .location-info {
+        top: 15px !important;
+        left: 8px !important;
+    }
+}
+
+/* PROFILE PICTURE SIZE OVERRIDES - Make it larger across all screens */
+.profile-picture {
+    height: 450px !important; /* Increased from default */
+    width: auto !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+}
+
+/* Responsive Profile Picture Sizes - All Larger */
+@media (max-width: 1400px) {
+    .profile-picture {
+        height: 420px !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .profile-picture {
+        height: 400px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .profile-picture {
+        height: 380px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .profile-picture {
+        height: 360px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-picture {
+        height: 350px !important;
+        max-width: 90% !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .profile-picture {
+        height: 330px !important;
+        max-width: 85% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-picture {
+        height: 310px !important;
+        max-width: 80% !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .profile-picture {
+        height: 270px !important;
+        max-width: 75% !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .profile-picture {
+        height: 250px !important;
+        max-width: 70% !important;
+    }
+}
