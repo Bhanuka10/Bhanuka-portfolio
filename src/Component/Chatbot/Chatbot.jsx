@@ -520,12 +520,6 @@ export default function Chatbot() {
     const baseDelay = 1000; // 1 second base delay
     
     try {
-      // Validate API key first
-      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-      if (!apiKey || apiKey.trim() === '') {
-        throw new Error("API key not configured");
-      }
-
       // Add delay between requests to avoid rate limiting
       if (retryCount > 0) {
         const delay = baseDelay * Math.pow(2, retryCount - 1); // Exponential backoff
@@ -533,29 +527,12 @@ export default function Chatbot() {
         await new Promise(resolve => setTimeout(resolve, delay));
       } else {
         // Add a small delay even for first request to prevent rapid-fire requests
-        await new Promise(resolve => setTimeout(resolve, 500));
+        await new Promise(resolve => setTimeout(resolve, 300));
       }
 
-      // Get the Gemini 2.5 Flash model with enhanced configuration
+      // Get the Gemini 2.5 Flash model
       const model = ai.getGenerativeModel({
-        model: "gemini-2.5-flash",
-        generationConfig: {
-          temperature: 0.3,
-          topP: 0.8,
-          topK: 40,
-          maxOutputTokens: 400,
-          candidateCount: 1,
-        },
-        safetySettings: [
-          {
-            category: "HARM_CATEGORY_HARASSMENT",
-            threshold: "BLOCK_MEDIUM_AND_ABOVE",
-          },
-          {
-            category: "HARM_CATEGORY_HATE_SPEECH", 
-            threshold: "BLOCK_MEDIUM_AND_ABOVE",
-          },
-        ],
+        model: "gemini-2.5-flash"
       });
       
       // Format the user query with context and enhanced prompt
@@ -580,38 +557,36 @@ Example formats:
 
 Provide a direct, point-wise answer based on their specific question.`;
 
-      // Use generateContent method instead of chat for better reliability
-      const result = await model.generateContent({
-        contents: [{ role: "user", parts: [{ text: enhancedPrompt }] }],
+      const chat = model.startChat({
+        history: [
+          {
+            role: "user",
+            parts: [{ text: enhancedPrompt }],
+          },
+          {
+            role: "model",
+            parts: [{ text: "I understand. I'll provide structured, point-wise responses that directly address user questions about Bhanuka's portfolio, using proper markdown formatting with headers, bullet points, and relevant emojis." }],
+          },
+        ],
+        generationConfig: {
+          temperature: 0.2,
+          topP: 0.8,
+          topK: 30,
+          maxOutputTokens: 300,
+        }
       });
       
+      // Send the user's message to the chat
+      const result = await chat.sendMessage(userText);
       const response = await result.response;
-      const text = response.text();
       
-      if (!text || text.trim() === '') {
+      if (!response.text()) {
         throw new Error("Empty response from API");
       }
 
-      return text;
+      return response.text();
     } catch (error) {
       console.error(`Error calling Gemini API (attempt ${retryCount + 1}):`, error);
-      
-      // Handle specific API key configuration errors
-      if (error.message.includes("API key not configured")) {
-        return "🔑 **Configuration Error**: The AI assistant is not properly configured. Please contact the administrator to set up the API key.";
-      }
-      
-      // Handle empty response errors with specific retry logic
-      if (error.message.includes("Empty response from API")) {
-        if (retryCount < maxRetries) {
-          console.log(`Empty response received, retrying... (${retryCount + 1}/${maxRetries})`);
-          await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2 seconds before retry
-          return await generateGeminiResponse(userText, retryCount + 1);
-        } else {
-          const fallbackResponse = getFallbackResponse(userText);
-          return `🤖 **Service Temporarily Unavailable**\n\nThe AI service is currently not responding properly. Here's what I can tell you without using the AI:\n\n${fallbackResponse}\n\n💡 **Try:**\n• Refresh the page and try again\n• Check your internet connection\n• Contact Bhanuka directly for immediate assistance`;
-        }
-      }
       
       // Handle 429 rate limit errors with retry logic
       if ((error.name === 'GoogleGenerativeAIFetchError' || 
@@ -640,8 +615,6 @@ Provide a direct, point-wise answer based on their specific question.`;
         return "🌐 I'm having network connectivity issues. Please check your internet connection and try again.";
       } else if (error.message && error.message.includes('Invalid argument')) {
         return "⚙️ There seems to be a configuration issue. Please refresh the page and try again.";
-      } else if (error.message && error.message.includes('API_KEY')) {
-        return "🔑 **API Key Error**: There's an issue with the API authentication. Please contact the administrator.";
       } else {
         const fallbackResponse = getFallbackResponse(userText);
         return `🤖 I'm experiencing technical difficulties. Here's some basic info:\n\n${fallbackResponse}\n\nFor more detailed assistance, please reach out to Bhanuka directly!`;

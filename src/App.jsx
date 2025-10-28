@@ -37,9 +37,12 @@ const Home = () => {
 
 function App() {
   const [count, setCount] = useState(0)
+  
+  // Get the base path from environment or use default for Vercel deployment
+  const basename = import.meta.env.VITE_BASE_PATH || '/';
 
   return (
-    <Router>
+    <Router basename={basename}>
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
