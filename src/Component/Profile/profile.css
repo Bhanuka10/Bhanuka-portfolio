@@ -317,77 +317,41 @@
 }
 
 /* MSI Laptop and similar short-height screens optimization */
-@media (max-height: 800px) and (min-width: 1200px) {
+@media (max-height: 900px) and (min-width: 1200px) {
     .profile {
-        min-height: 70vh;
-        padding: 40px 0;
-    }
-    
-    .profile-stage {
-        padding: 30px 40px;
-        gap: 40px;
-    }
-    
-    .profile-content {
-        gap: 15px;
-    }
-    
-    .profile-content h1 {
-        font-size: 2.2rem;
-        margin-bottom: 10px;
-    }
-    
-    .profile-content h2 {
-        font-size: 1.4rem;
-        margin-bottom: 8px;
-    }
-    
-    .profile-content h3 {
-        font-size: 1.1rem;
-        margin-bottom: 8px;
-    }
-    
-    .profile-content p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin-bottom: 15px;
-    }
-    
-    .download-cv-btn {
-        padding: 12px 30px;
-        font-size: 0.95rem;
-    }
-}
-
-/* Shorter screens (below 700px height) - Very compact laptops */
-@media (max-height: 700px) and (min-width: 1024px) {
-    .profile {
-        min-height: 60vh;
+        min-height: 100vh;
+        max-height: 100vh;
         padding: 20px 0;
+        overflow: hidden;
     }
     
     .profile-stage {
         padding: 20px 30px;
         gap: 30px;
+        height: 100%;
+        align-items: center;
     }
     
     .profile-content {
-        gap: 10px;
+        gap: 12px;
     }
     
     .profile-content h1 {
         font-size: 2rem;
         margin-bottom: 8px;
+        line-height: 1.1;
     }
     
     .profile-content h2 {
         font-size: 1.3rem;
         margin-bottom: 6px;
+        line-height: 1.2;
     }
     
     .profile-content h3 {
         font-size: 1rem;
         margin-bottom: 6px;
+        line-height: 1.2;
     }
     
     .profile-content p {
@@ -399,6 +363,68 @@
     .download-cv-btn {
         padding: 10px 25px;
         font-size: 0.9rem;
+        margin-top: 10px;
+    }
+    
+    .profile-picture {
+        height: 300px;
+    }
+    
+    .profile-pictu {
+        height: 320px;
+    }
+}
+
+/* Very short screens (MSI Gaming laptops, compact displays) */
+@media (max-height: 800px) and (min-width: 1024px) {
+    .profile {
+        min-height: 100vh;
+        max-height: 100vh;
+        padding: 15px 0;
+        overflow: hidden;
+    }
+    
+    .profile-stage {
+        padding: 15px 25px;
+        gap: 25px;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .profile-content {
+        gap: 8px;
+        max-width: 500px;
+    }
+    
+    .profile-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 6px;
+        line-height: 1.1;
+    }
+    
+    .profile-content h2 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        line-height: 1.2;
+    }
+    
+    .profile-content h3 {
+        font-size: 0.95rem;
+        margin-bottom: 5px;
+        line-height: 1.2;
+    }
+    
+    .profile-content p {
+        font-size: 0.85rem;
+        line-height: 1.3;
+        margin-bottom: 10px;
+    }
+    
+    .download-cv-btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+        margin-top: 8px;
     }
     
     .profile-picture {
@@ -407,6 +433,67 @@
     
     .profile-pictu {
         height: 300px;
+    }
+}
+
+/* Extra short screens (below 720px height) */
+@media (max-height: 720px) and (min-width: 1024px) {
+    .profile {
+        min-height: 100vh;
+        max-height: 100vh;
+        padding: 10px 0;
+        overflow: hidden;
+    }
+    
+    .profile-stage {
+        padding: 10px 20px;
+        gap: 20px;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .profile-content {
+        gap: 6px;
+        max-width: 450px;
+    }
+    
+    .profile-content h1 {
+        font-size: 1.6rem;
+        margin-bottom: 4px;
+        line-height: 1.1;
+    }
+    
+    .profile-content h2 {
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+        line-height: 1.2;
+    }
+    
+    .profile-content h3 {
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+        line-height: 1.2;
+    }
+    
+    .profile-content p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+        margin-bottom: 8px;
+    }
+    
+    .download-cv-btn {
+        padding: 6px 18px;
+        font-size: 0.8rem;
+        margin-top: 6px;
+    }
+    
+    .profile-picture {
+        height: 250px;
+    }
+    
+    .profile-pictu {
+        height: 270px;
     }
 }
 
