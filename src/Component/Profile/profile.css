@@ -316,6 +316,100 @@
     transform: translateY(-5px) scale(1.02);
 }
 
+/* MSI Laptop and similar short-height screens optimization */
+@media (max-height: 800px) and (min-width: 1200px) {
+    .profile {
+        min-height: 70vh;
+        padding: 40px 0;
+    }
+    
+    .profile-stage {
+        padding: 30px 40px;
+        gap: 40px;
+    }
+    
+    .profile-content {
+        gap: 15px;
+    }
+    
+    .profile-content h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+    
+    .profile-content h2 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+    }
+    
+    .profile-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    
+    .profile-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+    
+    .download-cv-btn {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Shorter screens (below 700px height) - Very compact laptops */
+@media (max-height: 700px) and (min-width: 1024px) {
+    .profile {
+        min-height: 60vh;
+        padding: 20px 0;
+    }
+    
+    .profile-stage {
+        padding: 20px 30px;
+        gap: 30px;
+    }
+    
+    .profile-content {
+        gap: 10px;
+    }
+    
+    .profile-content h1 {
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+    
+    .profile-content h2 {
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+    }
+    
+    .profile-content h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+    
+    .profile-content p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 12px;
+    }
+    
+    .download-cv-btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+    
+    .profile-picture {
+        height: 280px;
+    }
+    
+    .profile-pictu {
+        height: 300px;
+    }
+}
+
 /* Ultra-wide screens (1920px+) - Large monitors */
 @media (min-width: 1920px) {
     .profile {
