@@ -386,45 +386,7 @@ const Skill = () => {
     ),
     passion: (
       <div className="passion-container" ref={passionRef}>
-        
-
         <div className="passion-body">
-          <div className="passion-story">
-            <h3 className="section-title">My Journey</h3>
-            <p className="story-text">
-              I am deeply passionate about creating elegant solutions to complex problems. 
-              My journey in technology began with curiosity and has evolved into a mission to build 
-              applications that not only function flawlessly but also provide exceptional user experiences. 
-              I believe that great software is born from the intersection of technical excellence and human empathy.
-            </p>
-          </div>
-
-          {/* <div className="passion-values">
-            <h3 className="section-title">Core Values</h3>
-            <div className="values-grid">
-              <div className="value-card">
-                <div className="value-icon"></div>
-                <h4>Innovation</h4>
-                <p>Constantly exploring new technologies and approaches to solve modern challenges.</p>
-              </div>
-              <div className="value-card">
-                <div className="value-icon"></div>
-                <h4>Excellence</h4>
-                <p>Committed to writing clean, maintainable code and delivering high-quality solutions.</p>
-              </div>
-              <div className="value-card">
-                <div className="value-icon"></div>
-                <h4>Collaboration</h4>
-                <p>Thriving in team environments where knowledge sharing drives collective growth.</p>
-              </div>
-              <div className="value-card">
-                <div className="value-icon"></div>
-                <h4>Learning</h4>
-                <p>Embracing continuous learning as the foundation of professional development.</p>
-              </div>
-            </div>
-          </div> */}
-
           <div className="passion-focus">
             <h3 className="section-title">Areas of Expertise & Interest</h3>
             <div className="focus-areas">
