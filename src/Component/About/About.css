@@ -430,6 +430,7 @@
 @media (max-width: 768px) {
   .about {
     height: auto;
+    max-height: none;
     min-height: max-content;
     padding: 20px 10px 30px;
     border-radius: 15px;
@@ -494,6 +495,7 @@
 @media (max-width: 600px) {
   .about {
     padding: 15px 8px 25px;
+    max-height: none;
     min-height: max-content;
     overflow: hidden;
   }
@@ -548,6 +550,7 @@
   .about {
     padding: 12px 6px 20px;
     border-radius: 12px;
+    max-height: none;
     min-height: max-content;
     overflow: hidden;
   }
