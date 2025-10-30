@@ -407,6 +407,41 @@
     grid-template-columns: 1fr;
   }
   
+  /* Mobile-specific focus-list styling */
+  .focus-category {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .focus-list {
+    margin-top: 1rem;
+  }
+  
+  .focus-list li {
+    padding: 0.8rem 0 0.8rem 2.5rem;
+    margin-bottom: 0.5rem;
+    background: rgba(0, 123, 255, 0.03);
+    border-radius: 10px;
+    border-left: 3px solid #007bff;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .focus-list li:before {
+    content: "●";
+    left: 1rem;
+    top: 0.8rem;
+    font-size: 0.7rem;
+    color: #007bff;
+  }
+  
+  .focus-list li:hover {
+    background: rgba(0, 123, 255, 0.08);
+    padding-left: 2.8rem;
+  }
+  
   .passion-quote {
     padding: 2rem 1.5rem;
   }
@@ -427,6 +462,30 @@
   
   .value-card, .focus-category {
     padding: 1.5rem;
+  }
+  
+  /* Extra small mobile - focus-list improvements */
+  .focus-list li {
+    padding: 0.7rem 0 0.7rem 2.2rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+    border-left-width: 2px;
+  }
+  
+  .focus-list li:before {
+    left: 0.8rem;
+    top: 0.7rem;
+    font-size: 0.6rem;
+  }
+  
+  .focus-list li:hover {
+    padding-left: 2.5rem;
+  }
+  
+  .category-name {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
   }
 }
 
