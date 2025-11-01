@@ -309,6 +309,11 @@
   
   .mobile-menu-toggle {
     display: flex;
+    /* move hamburger to the right corner on mobile */
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
     order: 3;
     flex: 0 0 auto;
   }
@@ -354,6 +359,27 @@
   
   .nav-menu.open {
     left: 0;
+  }
+
+  /* On mobile, backdrop should only cover the right side (content area),
+     leaving the left sliding menu visible. Override global backdrop here. */
+  .mobile-backdrop {
+    left: auto;
+    right: 0;
+    width: calc(100vw - 280px); /* match nav-menu width (280px) */
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 998;
+    pointer-events: none;
+  }
+
+  .mobile-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
   
   .nav-list {
