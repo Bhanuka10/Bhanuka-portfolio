@@ -519,6 +519,13 @@ export default function Chatbot() {
     const maxRetries = 3;
     const baseDelay = 1000; // 1 second base delay
     
+    // Check if API key is available
+    if (!import.meta.env.VITE_GEMINI_API_KEY) {
+      console.error("Gemini API key not found in environment variables");
+      const fallbackResponse = getFallbackResponse(userText);
+      return `🔑 **API Configuration Issue**\n\nThe Gemini API key is not configured. Here's some basic info:\n\n${fallbackResponse}\n\nPlease contact the developer to configure the API key.`;
+    }
+    
     try {
       // Add delay between requests to avoid rate limiting
       if (retryCount > 0) {
@@ -576,24 +583,64 @@ Provide a direct, point-wise answer based on their specific question.`;
         }
       });
       
-      // Send the user's message to the chat
-      const result = await chat.sendMessage(userText);
+      // Send the user's message with timeout
+      const timeoutPromise = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error("Request timeout")), 30000) // 30 second timeout
+      );
+      
+      const apiPromise = chat.sendMessage(userText);
+      
+      const result = await Promise.race([apiPromise, timeoutPromise]);
       const response = await result.response;
       
-      if (!response.text()) {
-        throw new Error("Empty response from API");
+      // Better response validation
+      const responseText = response.text();
+      if (!responseText || responseText.trim().length === 0) {
+        console.warn("Received empty response from Gemini API, retrying...");
+        if (retryCount < maxRetries) {
+          return await generateGeminiResponse(userText, retryCount + 1);
+        } else {
+          throw new Error("Empty response from API after multiple attempts");
+        }
       }
 
-      return response.text();
+      console.log("Gemini API response received successfully");
+      return responseText;
     } catch (error) {
       console.error(`Error calling Gemini API (attempt ${retryCount + 1}):`, error);
       
+      // Handle specific error types
+      const errorMessage = error.message || error.toString();
+      
+      // Handle empty response errors with retry
+      if (errorMessage.includes("Empty response from API") && retryCount < maxRetries) {
+        console.log(`Empty response detected, retrying... (${retryCount + 1}/${maxRetries})`);
+        return await generateGeminiResponse(userText, retryCount + 1);
+      }
+      
+      // Handle authentication errors
+      if (errorMessage.includes("API_KEY_INVALID") || errorMessage.includes("authentication")) {
+        const fallbackResponse = getFallbackResponse(userText);
+        return `🔑 **Authentication Error**\n\nThere's an issue with the API key configuration. Here's some basic info:\n\n${fallbackResponse}\n\nPlease contact the developer to fix the API configuration.`;
+      }
+      
+      // Handle timeout errors
+      if (errorMessage.includes("Request timeout") || errorMessage.includes("timeout")) {
+        if (retryCount < maxRetries) {
+          console.log(`Request timeout, retrying... (${retryCount + 1}/${maxRetries})`);
+          return await generateGeminiResponse(userText, retryCount + 1);
+        } else {
+          const fallbackResponse = getFallbackResponse(userText);
+          return `⏱️ **Request Timeout**\n\nThe API is taking too long to respond. Here's some basic info:\n\n${fallbackResponse}\n\nPlease try again in a moment.`;
+        }
+      }
+      
       // Handle 429 rate limit errors with retry logic
       if ((error.name === 'GoogleGenerativeAIFetchError' || 
-           error.message.includes('GoogleGenerativeAIFetchError') ||
-           error.message.includes('429') || 
-           error.message.includes('quota exceeded') ||
-           error.message.includes('RATE_LIMIT_EXCEEDED')) && 
+           errorMessage.includes('GoogleGenerativeAIFetchError') ||
+           errorMessage.includes('429') || 
+           errorMessage.includes('quota exceeded') ||
+           errorMessage.includes('RATE_LIMIT_EXCEEDED')) && 
            retryCount < maxRetries) {
         
         console.log(`Rate limit hit, retrying... (${retryCount + 1}/${maxRetries})`);
