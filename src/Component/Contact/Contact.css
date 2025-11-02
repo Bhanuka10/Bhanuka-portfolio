@@ -1136,33 +1136,44 @@
     
     .contact-info {
         flex: 1.2;
-        width: 600px;
-        min-width: 500px;
-        max-height: 75vh;
-        padding: 25px 30px;
+        width: 550px;
+        min-width: 480px;
+        max-height: 70vh;
+        padding: 20px 25px;
     }
     
     .contact-info-header h2 {
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
-    
-    .contact-cards-grid {
-        gap: 20px;
-    }
-    
-    .contact-card {
-        padding: 20px 18px;
-    }
-    
-    .contact-card h3 {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
         margin-bottom: 8px;
     }
     
-    .contact-card p {
-        font-size: 1rem;
-        line-height: 1.4;
+    .contact-items-container {
+        gap: 10px;
+        margin-top: 8px;
+        padding-top: 5px;
+        max-height: calc(100% - 60px);
+    }
+    
+    .contact-item {
+        padding: 15px 12px;
+        border-radius: 12px;
+    }
+    
+    .contact-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    
+    .contact-text h3 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+    
+    .contact-text p {
+        font-size: 0.9rem;
+        line-height: 1.3;
     }
     
     .social-icons {
@@ -1206,33 +1217,44 @@
     
     .contact-info {
         flex: 1.1;
-        width: 550px;
-        min-width: 450px;
-        max-height: 70vh;
-        padding: 22px 25px;
+        width: 500px;
+        min-width: 420px;
+        max-height: 65vh;
+        padding: 18px 22px;
     }
     
     .contact-info-header h2 {
-        font-size: 1.8rem;
-        margin-bottom: 8px;
+        font-size: 1.6rem;
+        margin-bottom: 6px;
     }
     
-    .contact-cards-grid {
-        gap: 18px;
+    .contact-items-container {
+        gap: 8px;
+        margin-top: 6px;
+        padding-top: 4px;
+        max-height: calc(100% - 50px);
     }
     
-    .contact-card {
-        padding: 18px 16px;
+    .contact-item {
+        padding: 12px 10px;
+        border-radius: 10px;
     }
     
-    .contact-card h3 {
-        font-size: 1.1rem;
-        margin-bottom: 7px;
+    .contact-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+        margin-bottom: 6px;
     }
     
-    .contact-card p {
-        font-size: 0.95rem;
-        line-height: 1.35;
+    .contact-text h3 {
+        font-size: 1rem;
+        margin-bottom: 4px;
+    }
+    
+    .contact-text p {
+        font-size: 0.85rem;
+        line-height: 1.25;
     }
     
     .social-icons {
