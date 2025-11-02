@@ -2,7 +2,8 @@
 
 .about {
   width: 100%;
-  max-height: 100vh;
+  max-height: none;
+  min-height: 0;
   
   padding: 20px 20px;
   background: linear-gradient(135deg, #0f172a, #1e293b); /* dark gradient */
@@ -144,8 +145,8 @@
   justify-content: flex-start;
   
   /* Consistent alignment */
-  height: 100%;
-  min-height: 280px;
+  height: auto;
+  min-height: 0;
   
   /* Prevent flex shrinking */
   -webkit-flex-shrink: 0;
@@ -192,6 +193,8 @@
 @media (min-width: 1920px) {
   .about {
     padding: 30px 40px;
+    max-height: none;
+    min-height: 0;
   }
   
   .about-title {
@@ -214,6 +217,8 @@
 @media (min-width: 1680px) and (max-width: 1919px) {
   .about {
     padding: 25px 35px;
+    max-height: none;
+    min-height: 0;
   }
   
   .about-title {
@@ -223,12 +228,15 @@
   
   .about-boxes {
     gap: 35px;
+    max-height: none;
   }
   
   .about-box {
     min-width: 300px;
     max-width: 360px;
     padding: 32px 28px;
+    min-height: 0;
+    height: auto;
   }
 }
 
@@ -236,6 +244,8 @@
 @media (min-width: 1440px) and (max-width: 1679px) {
   .about {
     padding: 22px 30px;
+    max-height: none;
+    min-height: 0;
   }
   
   .about-title {
@@ -245,12 +255,15 @@
   
   .about-boxes {
     gap: 32px;
+    max-height: none;
   }
   
   .about-box {
     min-width: 290px;
     max-width: 350px;
     padding: 30px 26px;
+    min-height: 0;
+    height: auto;
   }
 }
 
@@ -258,6 +271,8 @@
 @media (min-width: 1200px) and (max-width: 1439px) {
   .about {
     padding: 20px 25px;
+    max-height: none;
+    min-height: 0;
   }
   
   .about-title {
@@ -269,6 +284,7 @@
     gap: 30px;
     justify-content: center;
     align-items: stretch;
+    max-height: none;
   }
   
   .about-box {
@@ -276,38 +292,54 @@
     max-width: 340px;
     padding: 28px 24px;
     flex: 1 1 calc(50% - 15px);
+    min-height: 0;
+    height: auto;
   }
 }
 
 /* Small laptops and large tablets alignment fixes */
 @media (min-width: 1025px) and (max-width: 1199px) {
+  .about {
+    max-height: none;
+    min-height: 0;
+  }
+  
   .about-boxes {
     gap: 25px;
     justify-content: center;
     align-items: stretch;
+    max-height: none;
   }
   
   .about-box {
     flex: 1 1 calc(50% - 12.5px);
     min-width: 260px;
     max-width: 320px;
-    min-height: 260px;
+    min-height: 0;
+    height: auto;
   }
 }
 
 /* Responsive */
 @media (max-width: 1200px) {
+  .about {
+    max-height: none;
+    min-height: 0;
+  }
+  
   .about-boxes {
     gap: 25px;
     justify-content: center;
     align-items: stretch;
+    max-height: none;
   }
   
   .about-box {
     min-width: 260px;
     max-width: 320px;
     flex: 1 1 calc(50% - 12.5px);
-    min-height: 250px;
+    min-height: 0;
+    height: auto;
   }
 }
 
@@ -600,5 +632,213 @@
     font-size: 0.9rem;
     line-height: 1.5;
     width: 100%;
+  }
+}
+
+/* Extra small devices (320px and below) - Very small phones */
+@media (max-width: 320px) {
+  .about {
+    padding: 10px 5px 15px;
+    border-radius: 10px;
+  }
+  
+  .about-title {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+  
+  .about-boxes {
+    gap: 8px;
+    padding: 0;
+  }
+  
+  .about-box {
+    width: 90%;
+    max-width: 90%;
+    padding: 12px 8px;
+    border-radius: 10px;
+    min-height: 0;
+  }
+  
+  .about-box h2 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .about-box p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}
+
+/* Small tablets - Portrait orientation (481px to 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .about {
+    padding: 20px 15px 25px;
+    max-height: none;
+    min-height: 0;
+  }
+  
+  .about-title {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+  }
+  
+  .about-boxes {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .about-box {
+    width: 85%;
+    max-width: 500px;
+    min-height: 160px;
+    padding: 20px 18px;
+  }
+  
+  .about-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  
+  .about-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* Tablet landscape and small laptops (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about {
+    padding: 25px 20px 30px;
+    max-height: 85vh;
+  }
+  
+  .about-title {
+    font-size: 2.3rem;
+    margin-bottom: 25px;
+  }
+  
+  .about-boxes {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .about-box {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    min-height: 180px;
+    padding: 22px 20px;
+  }
+  
+  .about-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  
+  .about-box p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
+/* MacBook and similar displays (1280px to 1439px) - Enhanced */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .about {
+    max-height: none;
+    min-height: 0;
+    padding: 25px 30px 35px;
+  }
+  
+  .about-boxes {
+    gap: 25px;
+    max-height: none;
+    overflow-y: visible;
+  }
+  
+  .about-box {
+    min-height: 0;
+    max-height: none;
+    height: auto;
+    padding: 25px 22px;
+    overflow-y: visible;
+  }
+  
+  .about-box h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+  
+  .about-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* 4K and Ultra-wide displays (2560px+) */
+@media (min-width: 2560px) {
+  .about {
+    padding: 40px 60px;
+    max-height: none;
+    min-height: 0;
+  }
+  
+  .about-title {
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+  }
+  
+  .about-boxes {
+    gap: 40px;
+    max-height: none;
+  }
+  
+  .about-box {
+    min-width: 320px;
+    max-width: 400px;
+    min-height: 0;
+    height: auto;
+    padding: 35px 30px;
+  }
+  
+  .about-box h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-box p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Print styles */
+@media print {
+  .about {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: 1px solid #000 !important;
+    border-radius: 0 !important;
+    max-height: none !important;
+    page-break-inside: avoid;
+  }
+  
+  .about-title {
+    color: black !important;
+    -webkit-text-fill-color: black !important;
+  }
+  
+  .about-box {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    page-break-inside: avoid;
   }
 }
