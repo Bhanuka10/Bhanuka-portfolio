@@ -1106,3 +1106,143 @@
         font-size: 1.1rem;
     }
 }
+
+/* MacBook 13.3" (2560×1600) - Specific Contact layout optimization */
+@media screen and (min-width: 2560px) and (max-width: 2560px) and (min-height: 1600px) and (max-height: 1600px) {
+    .contact {
+        height: 90vh;
+        padding: 20px 30px;
+    }
+    
+    .contact-content {
+        gap: 50px;
+        height: 75vh;
+        max-width: 1300px;
+        padding: 0 30px;
+    }
+    
+    .contact-left {
+        flex: 0.6;
+        min-width: 350px;
+        max-width: 420px;
+    }
+    
+    .contact-image {
+        width: 100%;
+        max-width: 420px;
+        height: 350px;
+        margin-bottom: 25px;
+    }
+    
+    .contact-info {
+        flex: 1.2;
+        width: 600px;
+        min-width: 500px;
+        max-height: 75vh;
+        padding: 25px 30px;
+    }
+    
+    .contact-info-header h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .contact-cards-grid {
+        gap: 20px;
+    }
+    
+    .contact-card {
+        padding: 20px 18px;
+    }
+    
+    .contact-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    
+    .contact-card p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    
+    .social-icons {
+        gap: 18px;
+        margin-top: 25px;
+    }
+    
+    .social-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.6rem;
+    }
+}
+
+/* Alternative MacBook detection using device pixel ratio */
+@media screen and (-webkit-device-pixel-ratio: 2) and (min-width: 1280px) and (max-width: 1280px) and (min-height: 800px) and (max-height: 800px) {
+    .contact {
+        height: 85vh;
+        padding: 15px 25px;
+    }
+    
+    .contact-content {
+        gap: 40px;
+        height: 70vh;
+        max-width: 1200px;
+        padding: 0 25px;
+    }
+    
+    .contact-left {
+        flex: 0.65;
+        min-width: 320px;
+        max-width: 380px;
+    }
+    
+    .contact-image {
+        width: 100%;
+        max-width: 380px;
+        height: 320px;
+        margin-bottom: 20px;
+    }
+    
+    .contact-info {
+        flex: 1.1;
+        width: 550px;
+        min-width: 450px;
+        max-height: 70vh;
+        padding: 22px 25px;
+    }
+    
+    .contact-info-header h2 {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+    
+    .contact-cards-grid {
+        gap: 18px;
+    }
+    
+    .contact-card {
+        padding: 18px 16px;
+    }
+    
+    .contact-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 7px;
+    }
+    
+    .contact-card p {
+        font-size: 0.95rem;
+        line-height: 1.35;
+    }
+    
+    .social-icons {
+        gap: 16px;
+        margin-top: 22px;
+    }
+    
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
