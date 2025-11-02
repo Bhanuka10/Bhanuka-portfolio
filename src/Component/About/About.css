@@ -842,3 +842,98 @@
     page-break-inside: avoid;
   }
 }
+
+/* MacBook 13.3" (2560×1600) - Specific responsive design for 2-box layout */
+@media screen and (min-width: 2560px) and (max-width: 2560px) and (min-height: 1600px) and (max-height: 1600px) {
+  .about {
+    padding: 30px 50px 40px;
+    max-height: none;
+    min-height: 0;
+  }
+  
+  .about-title {
+    font-size: 3rem;
+    margin-bottom: 35px;
+  }
+  
+  .about-boxes {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+    align-items: stretch;
+    max-height: none;
+    flex-wrap: nowrap;
+  }
+  
+  .about-box {
+    flex: 1;
+    min-width: 450px;
+    max-width: 550px;
+    min-height: 0;
+    height: auto;
+    padding: 30px 25px;
+    overflow-y: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .about-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  
+  .about-box p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+  }
+}
+
+/* Alternative MacBook 13" detection using device pixel ratio - 2-box layout */
+@media screen and (-webkit-device-pixel-ratio: 2) and (min-width: 1280px) and (max-width: 1280px) and (min-height: 800px) and (max-height: 800px) {
+  .about {
+    padding: 25px 40px 35px;
+    max-height: none;
+    min-height: 0;
+  }
+  
+  .about-title {
+    font-size: 2.7rem;
+    margin-bottom: 30px;
+  }
+  
+  .about-boxes {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    justify-content: center;
+    align-items: stretch;
+    max-height: none;
+    flex-wrap: nowrap;
+  }
+  
+  .about-box {
+    flex: 1;
+    min-width: 400px;
+    max-width: 500px;
+    min-height: 0;
+    height: auto;
+    padding: 25px 22px;
+    overflow-y: visible;
+  }
+  
+  .about-box h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .about-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+  }
+}
