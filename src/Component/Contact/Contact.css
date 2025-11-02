@@ -1148,14 +1148,14 @@
     }
     
     .contact-items-container {
-        gap: 10px;
-        margin-top: 8px;
+        gap: 5px;
+        margin-top: 3px;
         padding-top: 5px;
         max-height: calc(100% - 60px);
     }
     
     .contact-item {
-        padding: 15px 12px;
+        padding: 8px 12px;
         border-radius: 12px;
     }
     
