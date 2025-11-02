@@ -1110,7 +1110,7 @@
 /* MacBook 13.3" (2560×1600) - Specific Contact layout optimization */
 @media screen and (min-width: 2560px) and (max-width: 2560px) and (min-height: 1600px) and (max-height: 1600px) {
     .contact {
-        height: 100vh;
+        height: 80vh;
         padding: 20px 30px;
     }
     
@@ -1138,7 +1138,7 @@
         flex: 1.2;
         width: 650px;
         min-width: 480px;
-        max-height: 75vh;
+        max-height: 65vh;
         padding: 20px 25px;
         display: flex;
         flex-direction: column;
@@ -1154,8 +1154,8 @@
         margin-top: 10px;
         padding-top: 5px;
         height: 440px;
-        max-height: 440px;
-        min-height: 440px;
+        max-height: 380px;
+        min-height: 380px;
         overflow-y: auto;
     }
     
@@ -1199,7 +1199,7 @@
 /* Alternative MacBook detection using device pixel ratio */
 @media screen and (-webkit-device-pixel-ratio: 2) and (min-width: 1280px) and (max-width: 1280px) and (min-height: 800px) and (max-height: 800px) {
     .contact {
-        height: 100vh;
+        height: 85vh;
         padding: 15px 25px;
     }
     
@@ -1227,7 +1227,7 @@
         flex: 1.1;
         width: 500px;
         min-width: 420px;
-        max-height: 75vh;
+        max-height: 65vh;
         padding: 18px 22px;
         display: flex;
         flex-direction: column;
