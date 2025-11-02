@@ -1110,13 +1110,13 @@
 /* MacBook 13.3" (2560×1600) - Specific Contact layout optimization */
 @media screen and (min-width: 2560px) and (max-width: 2560px) and (min-height: 1600px) and (max-height: 1600px) {
     .contact {
-        height: 70vh;
+        height: 100vh;
         padding: 20px 30px;
     }
     
     .contact-content {
         gap: 50px;
-        height: 75vh;
+        height: 85vh;
         max-width: 1300px;
         padding: 0 30px;
     }
@@ -1138,8 +1138,10 @@
         flex: 1.2;
         width: 650px;
         min-width: 480px;
-        max-height: 40vh !important;
+        max-height: 75vh;
         padding: 20px 25px;
+        display: flex;
+        flex-direction: column;
     }
     
     .contact-info-header h2 {
@@ -1148,26 +1150,31 @@
     }
     
     .contact-items-container {
-        gap: 5px;
-        margin-top: 3px;
+        gap: 10px;
+        margin-top: 10px;
         padding-top: 5px;
-        max-height: calc(100% - 60px);
+        height: 440px;
+        max-height: 440px;
+        min-height: 440px;
+        overflow-y: auto;
     }
     
     .contact-item {
-        padding: 8px 15px;
+        padding: 10px 15px;
         border-radius: 12px;
+        min-height: 100px;
+        max-height: 105px;
     }
     
     .contact-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 1.1rem;
+        width: 38px;
+        height: 38px;
+        font-size: 1.15rem;
         margin-bottom: 8px;
     }
     
     .contact-text h3 {
-        font-size: 1.1rem;
+        font-size: 1.08rem;
         margin-bottom: 5px;
     }
     
@@ -1178,7 +1185,8 @@
     
     .social-icons {
         gap: 18px;
-        margin-top: 25px;
+        margin-top: 20px;
+        flex-shrink: 0;
     }
     
     .social-icon {
@@ -1191,13 +1199,13 @@
 /* Alternative MacBook detection using device pixel ratio */
 @media screen and (-webkit-device-pixel-ratio: 2) and (min-width: 1280px) and (max-width: 1280px) and (min-height: 800px) and (max-height: 800px) {
     .contact {
-        height: 85vh;
+        height: 100vh;
         padding: 15px 25px;
     }
     
     .contact-content {
         gap: 40px;
-        height: 70vh;
+        height: 85vh;
         max-width: 1200px;
         padding: 0 25px;
     }
@@ -1219,8 +1227,10 @@
         flex: 1.1;
         width: 500px;
         min-width: 420px;
-        max-height: 65vh;
+        max-height: 75vh;
         padding: 18px 22px;
+        display: flex;
+        flex-direction: column;
     }
     
     .contact-info-header h2 {
@@ -1229,26 +1239,31 @@
     }
     
     .contact-items-container {
-        gap: 8px;
-        margin-top: 6px;
-        padding-top: 4px;
-        max-height: calc(100% - 50px);
+        gap: 10px;
+        margin-top: 10px;
+        padding-top: 5px;
+        height: 380px;
+        max-height: 380px;
+        min-height: 380px;
+        overflow-y: auto;
     }
     
     .contact-item {
-        padding: 12px 10px;
+        padding: 10px 12px;
         border-radius: 10px;
+        min-height: 85px;
+        max-height: 90px;
     }
     
     .contact-icon {
-        width: 32px;
-        height: 32px;
-        font-size: 1rem;
+        width: 35px;
+        height: 35px;
+        font-size: 1.05rem;
         margin-bottom: 6px;
     }
     
     .contact-text h3 {
-        font-size: 1rem;
+        font-size: 0.98rem;
         margin-bottom: 4px;
     }
     
@@ -1259,7 +1274,8 @@
     
     .social-icons {
         gap: 16px;
-        margin-top: 22px;
+        margin-top: 18px;
+        flex-shrink: 0;
     }
     
     .social-icon {
