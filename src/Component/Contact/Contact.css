@@ -1110,7 +1110,7 @@
 /* MacBook 13.3" (2560×1600) - Specific Contact layout optimization */
 @media screen and (min-width: 2560px) and (max-width: 2560px) and (min-height: 1600px) and (max-height: 1600px) {
     .contact {
-        height: 90vh;
+        height: 70vh;
         padding: 20px 30px;
     }
     
@@ -1155,7 +1155,7 @@
     }
     
     .contact-item {
-        padding: 8px 12px;
+        padding: 8px 15px;
         border-radius: 12px;
     }
     
