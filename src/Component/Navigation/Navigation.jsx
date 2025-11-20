@@ -200,11 +200,20 @@ const Navigation = () => {
         </div>
         
         <div className="nav-cta">
-          <button className="hire-btn" onClick={(e) => {
-            e.preventDefault();
-            setActiveLink('email');
-            scrollToSection('email');
-          }}>
+          <button 
+            className="hire-btn" 
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              setActiveLink('email');
+              scrollToSection('email');
+            }}
+            onTouchStart={(e) => {
+              e.preventDefault();
+              setActiveLink('email');
+              scrollToSection('email');
+            }}
+          >
             <span className="btn-text">Let's Work</span>
           </button>
         </div>

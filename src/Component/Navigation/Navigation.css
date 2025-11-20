@@ -305,6 +305,9 @@
     flex: 1;
     display: flex !important;
     justify-content: center;
+    position: relative;
+    z-index: 1000;
+    pointer-events: auto;
   }
   
   .mobile-menu-toggle {
@@ -330,9 +333,15 @@
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap;
+    position: relative;
+    z-index: 1001;
+    pointer-events: auto;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
   
-  .nav-cta .hire-btn:hover {
+  .nav-cta .hire-btn:hover,
+  .nav-cta .hire-btn:active {
     background: linear-gradient(135deg, #2563eb, #1d4ed8);
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -440,11 +449,13 @@
   visibility: hidden;
   transition: all 0.4s ease;
   z-index: 998;
+  pointer-events: none;
 }
 
 .mobile-backdrop.open {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .hamburger {
