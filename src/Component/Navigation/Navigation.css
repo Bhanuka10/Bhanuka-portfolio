@@ -305,6 +305,8 @@
     flex: 1;
     display: flex !important;
     justify-content: center;
+    z-index: 1001;
+    pointer-events: auto;
   }
   
   .mobile-menu-toggle {
@@ -316,6 +318,7 @@
     transform: translateY(-50%);
     order: 3;
     flex: 0 0 auto;
+    z-index: 1002;
   }
   
   /* Adjust mobile CTA button styling */
@@ -330,6 +333,9 @@
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap;
+    position: relative;
+    z-index: 1001;
+    pointer-events: auto;
   }
   
   .nav-cta .hire-btn:hover {
