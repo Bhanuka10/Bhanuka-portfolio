@@ -6,6 +6,7 @@ import TypedText from '../TypedText/TypedText'
 import SpaceAnimation from './SpaceAnimation'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { getImagePath, fullBodyImage } from '../../utils/imagePaths'
+import CVFile from '../../assets/CV/CV_Sahan-Bhanuka-Bandaranayake_SE.pdf'
 
 const Profile = () => {
   const roles = [
@@ -16,6 +17,15 @@ const Profile = () => {
     "Lifelong Learner",
     "Data Science Enthusiast"
   ];
+
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = CVFile;
+    link.download = 'CV_Sahan-Bhanuka-Bandaranayake_SE.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className='profile'>
@@ -102,7 +112,7 @@ const Profile = () => {
             <h2>It's Me <span>Bhanuka Bandaranayake</span></h2>
             <h3>I'm a <span><TypedText textArray={roles} typingSpeed={80} deletingSpeed={40} delayBetweenTexts={1500} /></span></h3>
             <p>"I'm an undergraduate computing student passionate about developing scalable, AI-powered web applications using the MEAN stack and Laravel, with a strong focus on machine learning, model training, and data-driven innovation."</p>
-            <button className='btn'>Download CV</button>
+            <button className='btn' onClick={handleDownloadCV}>Download CV</button>
         </div>
     </div>
   )
